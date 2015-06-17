@@ -5,7 +5,8 @@
   "repository": "git@github.com:michalbe/md-file-tree.git",
   "devDependencies": {
     "assert": "^1.3.0",
-    "precommit-hook": "^2.0.1"
+    "precommit-hook": "^2.0.1",
+    "jshint": "^2.8.0"
   },
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
