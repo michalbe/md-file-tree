@@ -1,4 +1,4 @@
-module.export = (function(){
+module.exports = (function(){
   'use strict';
   var fs = require('fs');
 
