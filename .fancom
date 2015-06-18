@@ -35,7 +35,7 @@ emoji=1
 noprefix=1
 
 # Open github compare page in the browser after succesfull push
-#opencompare=1
+opencompare=0
 
 # Github username, default: username of the owner of the current repo
 #author="authorname"
