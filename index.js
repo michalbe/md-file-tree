@@ -9,6 +9,7 @@
       if (typeof result[i] === 'string') {
         output += '[' + result[i] + '](' + i + ')\n';
       } else if (typeof result[i] === 'object'){
+        output += 'folder: ' + i + '\n';
         parseResult(result[i]);
       }
     }
