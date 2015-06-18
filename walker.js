@@ -56,7 +56,6 @@ var fs = require('fs'),
                   buildBranch(filePath, branch[file]);
                 } else {
                   var fp = filePath.replace(process.cwd(), '');
-                  var dir = fp.replace(file, '');
                   //console.log(dir, file);
                   // If it's not a directory, it's a file.
                   // Files get a true value in the tree.
