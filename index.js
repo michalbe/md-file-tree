@@ -1,11 +1,14 @@
 (function(){
   'use strict';
-  var tree = require('no-promise-dir-tree');
+  var tree = require('./walker');
   var dir = process.cwd();
+  var output = '';
 
-  console.log(dir);
+  var parseElement = function(element) {
+
+  };
   tree(dir, function(err, result){
-    console.log(result);
+
   });
 
 })();
