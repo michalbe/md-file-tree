@@ -33,5 +33,5 @@ module.export = (function(){
     });
   };
 
-
+  return walk;
 })();
