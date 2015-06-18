@@ -1,10 +1,11 @@
 (function(){
   'use strict';
   var tree = require('./walker');
-  var dir = process.cwd();
+  var dirPath = process.cwd();
+  var dir = dirPath.split('/').pop();
   var indentation = 0;
 
-  var output = '- ' + dir.split('/').pop() + '\n';
+  var output = '- ' + dir + '\n';
 
   var addIndentation = function(){
     return new Array((indentation*2)+1).join(' ');
@@ -22,7 +23,7 @@
       }
     }
   };
-  tree(dir, function(err, result){
+  tree(dirPath, function(err, result){
     parseResult(result);
     console.log(output);
   });
