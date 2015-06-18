@@ -4,7 +4,7 @@
   var dir = process.cwd();
   var indentation = 0;
 
-  var output = '';
+  var output = '- ' + dir.split('/').pop() + '\n';
 
   var addIndentation = function(){
     return new Array((indentation*2)+1).join(' ');
