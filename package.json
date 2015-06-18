@@ -13,6 +13,7 @@
     "lint": "node node_modules/jshint/bin/jshint ."
   },
   "dependencies": {
+    "event-state": "^0.3.5",
     "no-promise-dir-tree": "0.0.2"
   }
 }
