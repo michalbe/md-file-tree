@@ -17,6 +17,7 @@ module.exports = (function(){
         file = dir + '/' + file;
         fs.stat(file, function(err, stat) {
           if (stat && stat.isDirectory()) {
+            console.log(dir);
             walk(file, function(err, res) {
               results = results.concat(res);
               next();
