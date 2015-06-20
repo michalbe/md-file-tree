@@ -5,7 +5,7 @@
 
   console.log(dir);
   walk(dir, function(err, result){
-    console.log(result);
+    //console.log(result);
   });
 
 })();
