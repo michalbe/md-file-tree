@@ -9,7 +9,7 @@
     "jshint": "^2.8.0"
   },
   "bin": {
-    "md-file-tree": ".index.js"
+    "md-file-tree": "./index.js"
   },
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
