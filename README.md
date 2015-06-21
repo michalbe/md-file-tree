@@ -12,7 +12,7 @@ Then in any dir
 $ md-file-tree > list.md
 ```
 
-generated file:
+generated `list.md` file:
 
 ```markdown
 - __michal__
