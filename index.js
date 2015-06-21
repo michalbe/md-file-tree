@@ -15,7 +15,7 @@
     indentation++;
     for (var i in result) {
       if (typeof result[i] === 'string') {
-        output += addIndentation() + '- [' + result[i] + '](' + i + ')\n';
+        output += addIndentation() + '- [' + i + '](' + result[i] + ')\n';
       } else if (typeof result[i] === 'object'){
         output += addIndentation() + '- ' + i + '\n';
         parseResult(result[i]);
