@@ -42,4 +42,4 @@ generated `list.md` file:
     - [michal-tests.js](michal/tests/michal-tests.js)
 ```
 
-note that this script __skips__ `.git` & `node_modules` directories.
+note that this script __skips__ all hidden files and directories (with `.`, like `.git` or `.gitignore`) & `node_modules` directory.
