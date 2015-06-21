@@ -51,16 +51,15 @@ var fs = require('fs'),
 
                   // Directories are object properties on the tree.
                   branch[file] = {};
-                  console.log('cur dir name', file);
+                  //console.log('cur dir name', file);
                   // Recurse into the directory.
                   buildBranch(filePath, branch[file]);
                 } else {
                   var fp = filePath.replace(process.cwd(), '');
-                  var dir = fp.replace(file, '');
-                  console.log(dir, file);
+                  //console.log(dir, file);
                   // If it's not a directory, it's a file.
                   // Files get a true value in the tree.
-                  branch[file] = true;
+                  branch[file] = fp;
                   emitter.emit(filePath, true);
                 }
               });
