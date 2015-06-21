@@ -1,11 +1,11 @@
 (function(){
   'use strict';
-  var walk = require('./utils/walker.js');
+  var tree = require('dir-tree');
   var dir = process.cwd();
 
   console.log(dir);
-  walk(dir, function(err, result){
-    //console.log(result);
+  tree(dir).then(function(result){
+    console.log(result);
   });
 
 })();
