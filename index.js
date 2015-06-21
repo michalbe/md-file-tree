@@ -5,7 +5,7 @@
   var dir = dirPath.split('/').pop();
   var indentation = 0;
 
-  var output = '- ' + dir + '\n';
+  var output = '- __' + dir + '__\n';
 
   var addIndentation = function(){
     return new Array((indentation*2)+1).join(' ');
