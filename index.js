@@ -17,7 +17,7 @@
       if (typeof result[i] === 'string') {
         output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
       } else if (typeof result[i] === 'object'){
-        output += addIndentation() + '- ' + i + '\n';
+        output += addIndentation() + '- __' + i + '__\n';
         parseResult(result[i]);
         indentation--;
       }
