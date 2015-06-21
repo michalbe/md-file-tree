@@ -1,11 +1,13 @@
+#!/usr/bin/env node
+'use strict';
+
 (function(){
-  'use strict';
   var tree = require('./walker');
   var dirPath = process.cwd();
   var dir = dirPath.split('/').pop();
   var indentation = 0;
 
-  var output = '- ' + dir + '\n';
+  var output = '- __' + dir + '__\n';
 
   var addIndentation = function(){
     return new Array((indentation*2)+1).join(' ');
@@ -15,9 +17,9 @@
     indentation++;
     for (var i in result) {
       if (typeof result[i] === 'string') {
-        output += addIndentation() + '- [' + result[i] + '](' + i + ')\n';
+        output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
       } else if (typeof result[i] === 'object'){
-        output += addIndentation() + '- ' + i + '\n';
+        output += addIndentation() + '- __' + i + '__\n';
         parseResult(result[i]);
         indentation--;
       }
