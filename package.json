@@ -8,6 +8,9 @@
     "precommit-hook": "^2.0.1",
     "jshint": "^2.8.0"
   },
+  "bin": {
+    "md-file-tree": ".index.js"
+  },
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
