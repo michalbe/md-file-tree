@@ -4,7 +4,7 @@
   var dir = process.cwd();
 
   console.log(dir);
-  tree(dir, function(result){
+  tree(dir, function(err, result){
     console.log(result);
   });
 
