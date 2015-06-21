@@ -9,7 +9,7 @@ Install with:
 
 Then in any dir
 ```bash
-$ md-file-tree 
+$ md-file-tree > list.md
 ```
 
 generated file:
