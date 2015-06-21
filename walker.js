@@ -47,7 +47,7 @@ var fs = require('fs'),
                   // Errors result in a false value in the tree
                   branch[file] = false;
                   emitter.emit(filePath, true);
-                } else if (stats.isDirectory()) {
+                } else if (stats.isDirectory() && file !== '.git') {
 
                   // Directories are object properties on the tree.
                   branch[file] = {};
