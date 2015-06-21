@@ -11,8 +11,5 @@
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
-  },
-  "dependencies": {
-    "dir-tree": "^1.0.1"
   }
 }
