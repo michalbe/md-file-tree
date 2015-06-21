@@ -11,5 +11,8 @@
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
+  },
+  "dependencies": {
+    "no-promise-dir-tree": "0.0.2"
   }
 }
