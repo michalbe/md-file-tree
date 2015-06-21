@@ -1,5 +1,7 @@
+#!/usr/bin/env node
+'use strict';
+
 (function(){
-  'use strict';
   var tree = require('./walker');
   var dirPath = process.cwd();
   var dir = dirPath.split('/').pop();
