@@ -16,7 +16,7 @@
   var parseResult = function(result){
     indentation++;
     for (var i in result) {
-      if (typeof result[i] === 'string') {
+      if (typeof result[i] === 'string' && i[0] !== '.') {
         output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
       } else if (typeof result[i] === 'object'){
         output += addIndentation() + '- __' + i + '__\n';
