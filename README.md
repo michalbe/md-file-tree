@@ -3,7 +3,7 @@ Generate markdown list of all the files in a directory.
 
 ### How to use? ###
 Install with:
-```bash```
+```bash
  $ npm install md-file-tree -g
 ```
 
