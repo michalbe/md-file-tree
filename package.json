@@ -1,12 +1,15 @@
 {
   "name": "md-file-tree",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "author": "Michał Budzyński <michal@virtualdesign.pl>",
   "repository": "git@github.com:michalbe/md-file-tree.git",
   "devDependencies": {
     "assert": "^1.3.0",
     "precommit-hook": "^2.0.1",
     "jshint": "^2.8.0"
+  },
+  "bin": {
+    "md-file-tree": "./index.js"
   },
   "scripts": {
     "test": "node tests/md-file-tree-tests.js",
