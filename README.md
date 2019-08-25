@@ -1,45 +1,60 @@
-# md-file-tree by [@michalbe](http://github.com/michalbe) #
-Generate markdown list of all the files in a directory.
+# md-file-tree by [@michalbe](http://github.com/michalbe)
 
-### How to use? ###
-Install with:
+Generate markdown tree of all the files in a directory, recursively.
+
+## How to use?
+
+### Install the script
+
 ```bash
- $ npm install md-file-tree -g
+$ npm install md-file-tree -g
 ```
 
-Then in any dir
+### Run the tree script in any directory
+
+```bash
+$ md-file-tree
+```
+
+### Enable emoji (📂 & 📄) with the command line switch
+
+```bash
+$ md-file-tree --emoji
+$ md-file-tree -e
+```
+
+### Redirect the output to a file
+
 ```bash
 $ md-file-tree > list.md
 ```
 
-generated `list.md` file:
+This generates the `list.md` file with:
 
 ```markdown
 - __michal__
-  - [.fancom](michal/.fancom)
-  - [.git](michal/.git)
-  - [.gitignore](michal/.gitignore)
-  - [.jshintignore](michal/.jshintignore)
-  - [.jshintrc](michal/.jshintrc)
-  - [LICENSE](michal/LICENSE)
-  - [README.md](michal/README.md)
+  - [LICENSE](LICENSE)
+  - [README.md](README.md)
   - __bin__
-    - [cli.js](michal/bin/cli.js)
-  - [michal.png](michal/michal.png)
-  - [node_modules](michal/node_modules)
-  - [npm-debug.log](michal/npm-debug.log)
-  - [package.json](michal/package.json)
-  - [screen.png](michal/screen.png)
+    - [cli.js](bin/cli.js)
+  - [michal.png](michal.png)
+  - [node\_modules](node_modules)
+  - [npm\-debug.log](npm-debug.log)
+  - [package.json](package.json)
+  - [screen.png](screen.png)
   - __scripts__
-    - [assert.js](michal/scripts/assert.js)
-    - [fancom.js](michal/scripts/fancom.js)
-    - [jshintrc.js](michal/scripts/jshintrc.js)
-    - [package-json.js](michal/scripts/package-json.js)
-    - [precommit-hook.js](michal/scripts/precommit-hook.js)
-    - [scripts.js](michal/scripts/scripts.js)
-    - [tests.js](michal/scripts/tests.js)
+    - [assert.js](scripts/assert.js)
+    - [fancom.js](scripts/fancom.js)
+    - [jshintrc.js](scripts/jshintrc.js)
+    - [package\-json.js](scripts/package-json.js)
+    - [precommit\-hook.js](scripts/precommit-hook.js)
+    - [scripts.js](scripts/scripts.js)
+    - [tests.js](scripts/tests.js)
   - __tests__
-    - [michal-tests.js](michal/tests/michal-tests.js)
+    - [michal\-tests.js](tests/michal-tests.js)
 ```
 
-note that this script __skips__ all hidden files and directories (with `.`, like `.git` or `.gitignore`) & `node_modules` directory.
+## Hidden files & directories
+
+Please note that this script __skips__ all hidden files and directories (with `.`, like `.git` or `.gitignore`) &
+ the contents of the `node_modules` directory.
