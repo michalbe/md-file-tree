@@ -10,7 +10,7 @@ const directoryName = name => {
 };
 const filename = (name, path) => {
     const link = path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + encodeURIComponent(name);
-    return '- ' + (emoji ? '📄 ' : '') + '[' + cleanMarkdown(name) + '](' + link + ')\n';
+    return '- ' + (emoji ? '📄 ' : '') + '[' + cleanMarkdown(name) + '](' + link.replace(/^\/?(.+?)$/, '$1') + ')\n';
 };
 const addIndentation = i => {
     return ' '.repeat(i * 2 + 1);
