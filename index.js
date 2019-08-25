@@ -1,33 +1,35 @@
 #!/usr/bin/env node
 'use strict';
 
-(function(){
-  var tree = require('./walker');
-  var dirPath = process.cwd();
-  var dir = dirPath.split('/').pop();
-  var indentation = 0;
+const main = () => {
+    const tree = require('./walker');
+    const dirPath = process.cwd();
+    const dir = dirPath.split('/').pop();
+    let indentation = 0;
 
-  var output = '- __' + dir + '__\n';
+    let output = '- __' + dir + '__\n';
 
-  var addIndentation = function(){
-    return new Array((indentation*2)+1).join(' ');
-  };
+    const addIndentation = () => {
+        return new Array((indentation * 2) + 1).join(' ');
+    };
 
-  var parseResult = function(result){
-    indentation++;
-    for (var i in result) {
-      if (typeof result[i] === 'string' && i[0] !== '.') {
-        output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
-      } else if (typeof result[i] === 'object'){
-        output += addIndentation() + '- __' + i + '__\n';
-        parseResult(result[i]);
-        indentation--;
-      }
-    }
-  };
-  tree(dirPath, function(err, result){
-    parseResult(result);
-    console.log(output);
-  });
+    const parseResult = result => {
+        indentation++;
+        for (const i in result) {
+            if (typeof result[i] === 'string' && i[0] !== '.') {
+                output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
+            } else if (typeof result[i] === 'object') {
+                output += addIndentation() + '- __' + i + '__\n';
+                parseResult(result[i]);
+                indentation--;
+            }
+        }
+    };
+    tree(dirPath, (err, result) => {
+        parseResult(result);
+        console.log(output);
+    });
 
-})();
+};
+
+main();
