@@ -3,13 +3,14 @@
 
 const tree = require('./walker');
 
+const emoji = process.argv.includes('--emoji') || process.argv.includes('-e');
 const cleanMarkdown = name => name.replace(/([\\\/_*|-])/g, '\\$1');
 const directoryName = name => {
-    return '- __' + cleanMarkdown(name) + '__\n';
+    return '- ' + (emoji ? '📂 ' : '') + '__' + cleanMarkdown(name) + '__\n';
 };
 const filename = (name, path) => {
     const link = path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + encodeURIComponent(name);
-    return '- [' + cleanMarkdown(name) + '](' + link + ')\n';
+    return '- ' + (emoji ? '📄 ' : '') + '[' + cleanMarkdown(name) + '](' + link + ')\n';
 };
 const addIndentation = i => {
     return ' '.repeat(i * 2 + 1);
