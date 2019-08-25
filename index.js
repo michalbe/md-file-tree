@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
+const filename = (name, path) => {
+    return '- [' + name + '](' + path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + name + ')\n';
+};
+
 const main = () => {
     const tree = require('./walker');
     const dirPath = process.cwd();
@@ -17,7 +21,8 @@ const main = () => {
         indentation++;
         for (const i in result) {
             if (typeof result[i] === 'string' && i[0] !== '.') {
-                output += addIndentation() + '- [' + i + '](' + dir + result[i] + ')\n';
+                const path = result[i].split('/');
+                output += addIndentation() + filename(path.pop(), path.join('/'));
             } else if (typeof result[i] === 'object') {
                 output += addIndentation() + '- __' + i + '__\n';
                 parseResult(result[i]);
