@@ -6,7 +6,8 @@ const directoryName = name => {
     return '- __' + cleanMarkdown(name) + '__\n';
 };
 const filename = (name, path) => {
-    return '- [' + cleanMarkdown(name) + '](' + path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + name + ')\n';
+    const link = path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + encodeURIComponent(name);
+    return '- [' + cleanMarkdown(name) + '](' + link + ')\n';
 };
 
 const main = () => {
