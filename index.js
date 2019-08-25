@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
+const cleanMarkdown = name => name.replace(/([\\\/_*|-])/g, '\\$1');
+const directoryName = name => {
+    return '- __' + cleanMarkdown(name) + '__\n';
+};
 const filename = (name, path) => {
-    return '- [' + name + '](' + path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + name + ')\n';
+    return '- [' + cleanMarkdown(name) + '](' + path.replace(/^\/?(.+?)\/?$/, '$1') + '/' + name + ')\n';
 };
 
 const main = () => {
@@ -11,7 +15,7 @@ const main = () => {
     const dir = dirPath.split('/').pop();
     let indentation = 0;
 
-    let output = '- __' + dir + '__\n';
+    let output = directoryName(dir);
 
     const addIndentation = () => {
         return new Array((indentation * 2) + 1).join(' ');
@@ -24,7 +28,7 @@ const main = () => {
                 const path = result[i].split('/');
                 output += addIndentation() + filename(path.pop(), path.join('/'));
             } else if (typeof result[i] === 'object') {
-                output += addIndentation() + '- __' + i + '__\n';
+                output += addIndentation() + directoryName(i);
                 parseResult(result[i]);
                 indentation--;
             }
