@@ -24,16 +24,17 @@ const main = () => {
 
     const parseResult = result => {
         indentation++;
-        for (const i in result) {
-            if (typeof result[i] === 'string' && i[0] !== '.') {
-                const path = result[i].split('/');
+        Object.keys(result).sort().forEach(key => {
+            const data = result[key];
+            if (typeof data === 'string' && key[0] !== '.') {
+                const path = data.split('/');
                 output += addIndentation() + filename(path.pop(), path.join('/'));
-            } else if (typeof result[i] === 'object') {
-                output += addIndentation() + directoryName(i);
-                parseResult(result[i]);
+            } else if (typeof data === 'object') {
+                output += addIndentation() + directoryName(key);
+                parseResult(data);
                 indentation--;
             }
-        }
+        });
     };
     tree(dirPath, (err, result) => {
         parseResult(result);
