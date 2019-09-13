@@ -7,9 +7,12 @@
     "md-file-tree": "./index.js"
   },
   "scripts": {
-    "lint": "node node_modules/jshint/bin/jshint ."
+    "lint": "jshint ."
   },
   "dependencies": {
     "event-state": "^0.3.5"
+  },
+  "devDependencies": {
+    "jshint": "^2.10.2"
   }
 }

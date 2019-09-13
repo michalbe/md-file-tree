@@ -11,7 +11,7 @@
   "unused": "vars",
   "strict": true,
   "trailing": true,
-  "maxlen": 80,
+  "maxlen": 120,
   "eqnull": true,
   "esnext": true,
   "expr": true,
