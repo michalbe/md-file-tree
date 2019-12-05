@@ -1,6 +1,6 @@
 {
   "name": "md-file-tree",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Michał Budzyński <michal@virtualdesign.pl>",
   "repository": "git@github.com:michalbe/md-file-tree.git",
   "bin": {
