@@ -1,0 +1,28 @@
+name: "md file tree"
+description: "Generate markdown file list of all the files in a directory"
+inputs:
+  file-name:
+    description: "The name of generated markdown file"
+    required: false
+    default: "list"
+  input-path:
+    description: "The relative path You want to list its content"
+    required: false
+    default: ""
+  output-path:
+    description: "The relative path You want to save generated file inside that"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        sudo npm install md-file-tree -g
+        sudo mkdir -p ${{ inputs.input-path }}
+        cd ${{ inputs.input-path }}
+        rm ${{ inputs.file-name }}.md -f
+        sudo md-file-tree > ${{ inputs.file-name }}.md --emoji
+        cd -
+        sudo mv ${{ inputs.input-path }}${{ inputs.file-name }}.md \
+          ${{ inputs.output-path }}${{ inputs.file-name }}.md -n \
+      shell: bash
